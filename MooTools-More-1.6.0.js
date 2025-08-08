@@ -3083,6 +3083,8 @@ String.implement({
 			if (decodeValues) value = decodeComponent(value);
 			keys.each(function(key, i){
 				if (key === '__proto__') return;
+				if (key === 'prototype') return;
+				if (key === 'constructor') return;
 
 				if (decodeKeys) key = decodeComponent(key);
 				var current = obj[key];
